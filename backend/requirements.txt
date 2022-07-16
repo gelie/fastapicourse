@@ -10,3 +10,6 @@ python-dotenv
 
 # for email validation
 pydantic[email]
+
+# for hashing
+passlib[bcrypt]
