@@ -31,8 +31,8 @@ def delete_job(id: int, db: Session, owner_id: int):
 
 
 def update_job(id: int, job: JobCreate, db: Session, owner_id: int):
-    old_job = db.query(Job).filter(Job.id == id)
-    if not old_job.first():
+    old_job = db.query(Job).filter(Job.id == id).first()
+    if not old_job:
         return 0
     job.__dict__.update(owner_id=owner_id)
     old_job.update(job.__dict__)

@@ -17,5 +17,11 @@ class Settings(object):
     PG_DB = os.getenv("POSTGRES_DATABASE")
     DATABASE_URL = f"postgresql://{PG_USER}:{PG_PWD}@{PG_HOST}:{PG_PORT}/{PG_DB}"
 
+    SECRET_KEY = os.getenv("SECRET_KEY")
+    ALGORITHM = os.getenv("ALGORITHM")
+    ACCESS_TOKEN_EXPIRY = os.getenv("ACCESS_TOKEN_EXPIRY")
+
+    TEST_USER_EMAIL = "test@example.com"  # new
+
 
 settings = Settings()
