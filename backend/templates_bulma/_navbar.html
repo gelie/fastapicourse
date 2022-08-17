@@ -1,7 +1,7 @@
 <div class="container">
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
+      <a class="navbar-item" href="/">
         <img src="{{ url_for('static', path='logo2.png') }}" width="23" height="24">
         <h1 class="title has-text-primary ml-1">JOB BOARD</h1>
       </a>
@@ -15,15 +15,15 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">
-          Home
+        <a class="navbar-item" hx-get="/jobs" hx-target="#main">
+          Jobs
         </a>
 
-        <a class="navbar-item">
+        <a class="navbar-item" hx-get="/docs" hx-target="#main">
           Documentation
         </a>
 
-        <div class="navbar-item has-dropdown is-hoverable">
+        <div class=" navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             More
           </a>
@@ -61,3 +61,16 @@
     </div>
   </nav>
 </div>
+
+<!-- <nav>
+  <ul>
+    <li>
+      <a href="/">
+        <img src="/static/logo2.png" width="23" height="24">
+        <strong>Job Board</strong>
+      </a>
+    </li>
+    <li><a href="/jobs">Jobs</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</nav> -->

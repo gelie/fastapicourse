@@ -1,0 +1,13 @@
+<h4 class="subtitle">Find Jobs...</h4>
+<div class="columns">
+  {% for job in jobs %}
+  <div class="column is-half">
+    {% include "_card.html" %}
+  </div>
+  {% if loop.index is divisibleby(2) %}
+</div>
+<div class="columns">
+  {% endif %}
+  {% endfor %}
+</div>
+{% include '_modal.html' %}

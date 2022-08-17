@@ -1,0 +1,13 @@
+<article>
+  <header>
+    <p>
+      <strong>{{ job.title }}</strong>
+      <a href="/jobs" aria="close" class="close"></a>
+    </p>
+  </header>
+  <p><strong>Company: </strong>{{job.company}}</p>
+  <p><strong>Company URL: </strong><a href={{job.company_url}} target="_blank">{{job.company_url}}</a></p>
+  <p><strong>Description: </strong>{{job.description}}</p>
+  <p><strong>Location: </strong>{{ job.location }}</p>
+  <p><strong>Date Posted: </strong>{{ job.date_posted }}</p>
+</article>

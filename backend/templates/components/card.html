@@ -1,0 +1,9 @@
+<article>
+  <h4 class="text-center">{{ job.title }}</h4>
+  <p><strong>Company: </strong>{{job.company}}</p>
+  <p><strong>Company URL: </strong><a href={{job.company_url}} target="_blank">{{job.company_url}}</a></p>
+  <p><strong>Description: </strong>{{job.description}}</p>
+  <p class="text-center">
+    <a href="" role="button" hx-get="{{ '/jobs/'~job.id }}" hx-target="#modal">Read More</a>
+  </p>
+</article>

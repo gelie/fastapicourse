@@ -7,7 +7,7 @@ from core.hashing import Hasher
 from core.security import create_access_token, decode_token
 from jose import JWTError
 
-router = APIRouter()
+router = APIRouter(prefix="/api/v1/login", tags=["login"])
 
 
 @router.post("/token")
@@ -31,7 +31,7 @@ def login(
     return dict(access_token=token, token_type="bearer")
 
 
-oauth_scheme = OAuth2PasswordBearer("/login/token")
+oauth_scheme = OAuth2PasswordBearer("/api/v1/login/token")
 
 
 def get_current_user_from_token(

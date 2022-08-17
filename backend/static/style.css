@@ -1,0 +1,21 @@
+:root {
+    --font-size: 18px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.grid {
+    grid-template-columns: repeat(auto-fill,minmax(40%,1fr));
+}

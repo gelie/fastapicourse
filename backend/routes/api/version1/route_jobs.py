@@ -9,10 +9,10 @@ from db.repository.jobs import (
     delete_job,
     update_job,
 )
-from api.version1.route_login import get_current_user_from_token
+from routes.api.version1.route_login import get_current_user_from_token
 from db.models.users import User
 
-router = APIRouter()
+router = APIRouter(prefix="/api/v1/jobs", tags=["jobs"])
 
 
 @router.post("/", response_model=JobShow)

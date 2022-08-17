@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from core.config import settings
 from db.session import engine
 from db.base import Base
-from api.version1.base import api_router
+from routes.base import api_router
 from fastapi.staticfiles import StaticFiles
 
 
@@ -19,7 +19,12 @@ def static_files(app):
 
 
 def start_application():
-    app = FastAPI(title=settings.PROJECT_TITLE, version=settings.PROJECT_VERSION)
+    app = FastAPI(
+        title=settings.PROJECT_TITLE,
+        version=settings.PROJECT_VERSION,
+        docs_url="/documentation",
+        redoc_url=None,
+    )
     create_tables()
     include_router(app)
     static_files(app)

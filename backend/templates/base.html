@@ -5,22 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
     <link rel="shortcut icon" href="{{ url_for('static', path='favicon.ico')}}" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <script src="https://unpkg.com/htmx.org@1.8.0"
-      integrity="sha384-cZuAZ+ZbwkNRnrKi05G/fjBX+azI9DNOkNYysZ0I/X5ZFgsmMiBXgDZof30F5ofc"
-      crossorigin="anonymous"></script>
-    <title>JobBoard</title>
+    <link rel="stylesheet" href="/static/pico.min.css">
+    <link rel="stylesheet" href="/static/default.min.css">
+    <link rel="stylesheet" href="/static/style.css">
   </head>
 
-  <body>
-    <div class="section">
-      {% include "navbar.html" %}
-      <div class="container" id="main">
-        {% block content %}
-        {% endblock %}
-      </div>
-    </div>
+  <body class="container">
+
+
+
+    {% block main %}
+    {% include "components/navbar.html" %}
+    {% block content %}{% endblock %}
+
+    {% include "components/footer.html" %}
+    {% endblock main %}
+
+
+
+    <script src="/static/htmx.min.js"></script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.7"></script>
+
   </body>
 
 </html>

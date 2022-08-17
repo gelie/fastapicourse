@@ -4,7 +4,7 @@ from schemas.users import UserCreate, UserShow
 from db.session import get_db
 from db.repository.users import create_new_user
 
-router = APIRouter()
+router = APIRouter(prefix="/api/v1/users", tags=["users"])
 
 
 @router.post("/", response_model=UserShow)

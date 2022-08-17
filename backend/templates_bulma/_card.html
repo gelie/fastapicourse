@@ -1,0 +1,30 @@
+<div class="card">
+  <div>
+    <div class="card-header-title is-centered">
+      <h1 class="title is-4">{{job.title}}</h1>
+    </div>
+  </div>
+  <div class="card-content" style="height: 200px;">
+    <div class="content">
+      <p><strong>Company: </strong>{{job.company}}</p>
+      <p><strong>Company URL: </strong><a href={{job.company_url}} target="_blank">{{job.company_url}}</a></p>
+      <p><strong>Description: </strong>{{job.description}}</p>
+    </div>
+  </div>
+  <footer class="card-footer is-justify-content-center">
+    {% set id = job.id %}
+    <a class="card-footer-item button is-warning is-flex-grow-0" hx-get='{{"/api/v1/jobs/"~id}}' hx-target=".modal"
+      _="on click show .modal">Read
+      More</a>
+  </footer>
+</div>
+
+<!-- <article>
+  <header>{{ job.title }}</header>
+  <p><strong>Company: </strong>{{job.company}}</p>
+  <p><strong>Company URL: </strong><a href={{job.company_url}} target="_blank">{{job.company_url}}</a></p>
+  <p><strong>Description: </strong>{{job.description}}</p>
+  <footer style="text-align: center;">
+    <a href="{{ '/jobs/'~id }}" role="button">Read More</a>
+  </footer>
+</article> -->
